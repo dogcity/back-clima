@@ -6,11 +6,16 @@
   "author": "José Ortega <jose.ortega.soto@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node src/index",
-    "dev": "nodemon src/index",
+    "start": "nodemon --exec babel-node src/index",
+    "build": "babel src/ --out-dir build",
+    "serve": "node build/index",
     "eslint": "eslint . --fix"
   },
   "devDependencies": {
+    "@babel/cli": "^7.12.16",
+    "@babel/core": "^7.12.16",
+    "@babel/node": "^7.12.16",
+    "@babel/preset-env": "^7.12.16",
     "eslint": "^7.20.0",
     "eslint-config-prettier": "^7.2.0",
     "eslint-config-standard": "^16.0.2",
